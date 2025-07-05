@@ -188,6 +188,11 @@ document.addEventListener("DOMContentLoaded", function () {
        
         <p>В 2025 году дистанционные программы профессиональной переподготовки и повышения квалификации по клинической психологии становятся всё более популярными. Они позволяют получить квалификацию клинического психолога без отрыва от работы и вне зависимости от места проживания. Например, программы профессиональной переподготовки предлагают обучение за 15,5 месяцев на базе высшего образования по любому профилю, что позволяет получить новую профессию. Для тех, кто уже имеет психологическое образование, доступны курсы длительностью 8 месяцев, направленные на получение новой специализации с квалификацией. Мы составили рейтинг ТОП-11 лучших дистанционных программ обучения по клинической психологии на 2025 год, чтобы помочь вам выбрать наиболее подходящий курс для профессионального роста.</p>
            </div>
+
+                 <div class="course">
+         <b><p class="update-date">Информация обновлена: <span id="update-date"></span></p></b>
+         </div>
+        
          <h2>Топ онлайн-курсов дистанционной переподготовки и повышения квалификации по клинической психологии</h2>
 
 <ol>
@@ -770,7 +775,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>Сайт не оказывает и не продает услуги. Вся информация носит исключительно информационный характер и может быть устаревшей.</p>
         <p><a href="/politika.html">Политика конфиденциальности и согласие на обработку ПД</a></p>
         <p><a href="/polzovatelskoe-soglashenie.html">Пользовательское соглашение</a></p>
-    </footer>
+
 
 <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #f9f9f9; color: #333; text-align: center; padding: 15px; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); z-index: 1000;">
   <p style="margin: 0; font-size: 14px;">
@@ -794,6 +799,26 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem('cookieConsent', 'true');
   });
 </script>
+
+    <script>
+    function getLastWednesday() {
+        let now = new Date();
+        let day = now.getDay(); // 0 (вс) ... 6 (сб)
+        // Среда — это 3
+        let diff = now.getDate() - ((day + 4) % 7); // Смещение к прошлой среде
+
+        let lastWednesday = new Date(now); // Клонируем дату
+        lastWednesday.setDate(diff);
+
+        let options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return lastWednesday.toLocaleDateString('ru-RU', options);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("update-date").textContent = getLastWednesday();
+    });
+</script>
+            </footer>
     
 </body>
 </html>
