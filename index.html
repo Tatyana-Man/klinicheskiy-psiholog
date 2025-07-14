@@ -127,6 +127,66 @@
                 padding: 6px 12px;
             }
         }
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .responsive-table thead {
+    background: #f2f2f2;
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  /* Мобильный стиль */
+  @media (max-width: 768px) {
+    .responsive-table,
+    .responsive-table thead,
+    .responsive-table tbody,
+    .responsive-table th,
+    .responsive-table td,
+    .responsive-table tr {
+      display: block;
+    }
+
+    .responsive-table thead {
+      display: none;
+    }
+
+    .responsive-table tr {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .responsive-table td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      white-space: normal;
+    }
+
+    .responsive-table td::before {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      content: attr(data-label);
+    }
+  }
+
+
+        
     </style>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -211,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <h2>Отличительные преимущества каждого дистанционного курса обучения на клинического психолога</h2>
 
-        <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+       <table class="responsive-table">
   <thead>
     <tr style="background-color:#74a57f; color:white;">
       <th style="padding:10px; border:1px solid #ccc;">#</th>
